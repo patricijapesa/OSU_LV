@@ -2,58 +2,58 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #zadatak 1
+
 x = np.array([1, 2, 3, 3, 1], float)
 y = np.array([1, 2, 2, 1, 1], float)
 
-plt.plot(x, y, 'r', linewidth = 1.5, marker = "*", markersize = 6)
+plt.plot(x, y, 'r', linewidth = 1, marker = '*', markersize = 5)
 plt.axis([0.0, 4.0, 0.0, 4.0])
 plt.xlabel('x os')
 plt.ylabel('y os')
-plt.title('Primjer slike')
+plt.title('Primjer')
 plt.show()
 
-#zadatak 2
-data = np.loadtxt("data.csv", delimiter=',', skiprows=1)
 
+#zadatak 2
+
+data = np.loadtxt('data.csv', delimiter = ',', skiprows = 1)
 rows, cols = np.shape(data)
-print(str(rows)," people were measured.")
+
+print('Broj izmjerenih ljudi: ', rows)
 
 height = data[:,1]
 weight = data[:,2]
-
-plt.scatter(height, weight, s=1)
- 
-plt.xlabel("Height [cm]")
-plt.ylabel("Weight [kg]")
-plt.title("Height to weight ratio")
+plt.scatter(height, weight, s = 1)
+plt.xlabel('height')
+plt.ylabel('weight')
 plt.show()
 
-height50 = height[::50]
-weight50 = weight[::50]
-
-plt.scatter(height50, weight50,s=5)
-plt.xlabel("Height [cm]")
-plt.ylabel("Weight [kg]")
-plt.title("Height to weight ratio of every 50th person")
+height50 = height[: : 50]
+weight50 = weight[: : 50]
+plt.scatter(height50, weight50, s = 5)
+plt.xlabel('height')
+plt.ylabel('weight')
+plt.title('Every 50th person')
 plt.show()
 
-print("Min height: ", str(np.min(height)))
-print("Max height: ", str(np.max(height)))
-print("Average height: ", str(np.mean(height)))
+print('Minimal height', np.min(height))
+print('Maximal height', np.max(height))
+print('Average height', np.mean(height))
 
-men=data[np.where(data[:,0]==1)]
-women=data[np.where(data[:,0]==0)]
+men = data[np.where(data[:, 0] == 1)]
+women = data[np.where(data[:, 0] == 0)]
+print('Minimal men height', np.min(men[:, 1]))
+print('Maximal men height', np.max(men[:, 1]))
+print('Average men height', np.mean(men[:, 1]))
+print('Minimal women height', np.min(women[:, 1]))
+print('Maximal women height', np.max(women[:, 1]))
+print('Average women height', np.mean(women[:, 1]))
 
-print("Min male height: ", str(np.min(men[:,1])))
-print("Max male height: ", str(np.max(men[:,1])))
-print("Average male height: ", str(np.mean(men[:,1])))
-
-print("Min female height: ", str(np.min(women[:,1])))
-print("Max female height: ", str(np.max(women[:,1])))
-print("Average female height: ", str(np.mean(women[:,1])))
 
 #zadatak 3
-img = plt.imread("road.jpg")
+
+img = plt.imread('road.jpg')
+
 brightness = 50
 brightened_image = np.clip(img.astype(np.uint16) + brightness, 0, 255).astype(np.uint8)
 plt.figure()
@@ -67,8 +67,7 @@ plt.figure()
 plt.imshow(second_quarter_img)
 plt.show()
 
-img2 = cv2.imread("road.jpg")
-rotated_img = cv2.rotate(img2, cv2.ROTATE_90_CLOCKWISE)
+rotated_img = np.rot90(img, k = 1)
 plt.figure()
 plt.imshow(rotated_img)
 plt.show()
@@ -78,7 +77,9 @@ plt.figure()
 plt.imshow(mirrored_img)
 plt.show()
 
+
 #zadatak 4
+
 black = np.zeros((50, 50), dtype=np.uint8) 
 white = np.ones((50, 50), dtype=np.uint8) * 255
 
