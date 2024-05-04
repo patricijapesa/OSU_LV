@@ -60,8 +60,7 @@ plt.show()
 fuels = {'X':'blue', 'Z':'yellow', 'D':'green', 'E':'red', 'N':'purple'}
 for fuel_type, color in fuels.items():
     subset = data[data['Fuel Type'] == fuel_type]
-    plt.scatter(subset['Fuel Consumption City (L/100km)'], subset['CO2 Emissions (g/km)'],
-                color=color, label=fuel_type)
+    plt.scatter(subset['Fuel Consumption City (L/100km)'], subset['CO2 Emissions (g/km)'], color=color, label=fuel_type)
 plt.legend(title='Fuel Type')
 plt.xlabel('Fuel Consumption City (L/100km)')
 plt.ylabel('CO2 Emissions (g/km)')
