@@ -141,7 +141,7 @@ LogRegression_model.fit(X_train, y_train)
 print('Parameters: ', LogRegression_model.coef_)
 #Razlika u odnosu na binarni klasifikacijski problem iz prvog zadatka je u broju klasa. U prvom zadatku imamo samo dvije klase (binarni problem), dok u ovom zadatku imamo tri klase.
 
-#plot_decision_regions(X_train, y_train, LogRegression_model)
+#plot_decision_regions(X_train, y_train, classifier = LogRegression_model)
 #funkcija ne radi i baca grešku kod pozivanja
 
 y_test_p = LogRegression_model.predict(X_test)
