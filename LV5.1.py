@@ -122,7 +122,7 @@ X_test_s = sc.transform(X_test)
 
 #a)
 model = keras.Sequential()
-model.add(layers.Input(shape = (4, )))
+model.add(layers.Input(shape = (7, )))
 model.add(layers.Dense(12, activation = 'relu'))
 model.add(layers.Dense(8, activation = 'relu'))
 model.add(layers.Dense(4, activation = 'relu'))
