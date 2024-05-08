@@ -144,7 +144,7 @@ model.save('model.keras')
 
 #e)
 score = model.evaluate(X_test, y_test, verbose = 0)
-print(score)
+print(score[1])
 
 #f)
 cm = confusion_matrix(y_test, y_test_p)
